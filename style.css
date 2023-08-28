@@ -97,6 +97,7 @@ img {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 5px;
   width: 100%;
+  background-color: pink;
 }
 
 .submit{
