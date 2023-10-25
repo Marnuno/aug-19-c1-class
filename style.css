@@ -6,6 +6,67 @@ body{
   background: linear-gradient(#b18cfe, #001e57);
   color: white;
   font-family: "Trebuchet MS"; 
+  transition: all 0.4s ease-in;
+  height: 100%;
+}
+
+/*dark-light mode*/
+
+.dark-mode {
+  background: linear-gradient(#333, #333);
+  color: #f0f0f0;
+  transition: all 0.4s ease-in;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 3.75rem;
+  height: 2.13rem;
+  margin-bottom: 0.63rem;
+  margin-inline: auto;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: all 0.4s ease-in;
+  border-radius: 2.13rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.63rem;
+  width: 1.63rem;
+  left: 0.25rem;
+  bottom: 0.25rem;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 2px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.63rem);
 }
 
 .grid-container {
@@ -95,9 +156,9 @@ img {
 .footer {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 5px;
+  padding: 10px;
   width: 100%;
-  background-color: pink;
+  background-color: rgb(204, 144, 197);
 }
 
 .submit{
@@ -117,3 +178,53 @@ img {
   color: rgb(11, 32, 32);
   transition: all 0.5s ease-out;
 }
+
+/*hobbies page*/
+
+.pictureslider {
+  display: grid;
+  width: 100%;
+  min-height: calc(100vh - 48px);
+  place-content: center;
+}
+
+#slider {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+#slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#slider img.active {
+  opacity: 1;
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 52px;
+  cursor: pointer;
+}
+
+button#prev {
+  left: 1px;
+}
+
+button#next {
+  right: 1px;
+}
+
